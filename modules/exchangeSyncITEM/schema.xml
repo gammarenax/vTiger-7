@@ -1,0 +1,84 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>vtiger_item_exchangesync_activity</name>
+			<sql><![CDATA[CREATE TABLE `vtiger_item_exchangesync_activity` (
+  `activityidexchange` varchar(255) NOT NULL DEFAULT '0',
+  `activityidvtiger` int(19) NOT NULL DEFAULT '0',
+  `exchangechangekey` varchar(255) NOT NULL DEFAULT '0',
+  `lastsyncvtiger` datetime NOT NULL,
+  `userid` int(19) NOT NULL,
+  PRIMARY KEY (`activityidexchange`,`activityidvtiger`),
+  KEY `Index_2` (`userid`) ,
+  KEY `Index_3` (`exchangechangekey`) 
+) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+		<table>
+			<name>vtiger_item_exchangesync_activity_tmp</name>
+			<sql><![CDATA[CREATE TABLE `vtiger_item_exchangesync_activity_tmp` (
+  `userid` int(19),
+  `idexchange` varchar(255),
+  `changekey` varchar(255),
+  `subject` varchar(100),
+  `description` text,
+  `activitytype` varchar(200),
+  `date_start` date,
+  `due_date` date DEFAULT NULL,
+  `time_start` varchar(50) DEFAULT NULL,
+  `time_end` varchar(50) DEFAULT NULL,
+  `time_zone` varchar(50) DEFAULT NULL,
+  `duration_hours` varchar(200) DEFAULT NULL,
+  `duration_minutes` varchar(200) DEFAULT NULL,
+  `status` varchar(200) DEFAULT NULL,
+  `eventstatus` varchar(200) DEFAULT NULL,
+  `priority` varchar(200) DEFAULT NULL,
+  `location` varchar(150) DEFAULT NULL,
+  `notime` varchar(3) NOT NULL DEFAULT '0',
+  `visibility` varchar(50) NOT NULL DEFAULT 'Private',
+  `recurringtype` varchar(200) DEFAULT '--None--',
+  PRIMARY KEY (`idexchange`,`changekey`),
+  KEY `Index_2` (`idexchange`) ,
+  KEY `Index_3` (`changekey`) ,
+  KEY `Index_4` (`userid`) 
+) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+		<table>
+			<name>vtiger_item_exchangesync_errors</name>
+			<sql><![CDATA[CREATE TABLE `vtiger_item_exchangesync_errors` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `time` datetime,
+  `code` varchar(45) DEFAULT NULL,
+  `message` varchar(255) DEFAULT NULL,
+  `file` varchar(255) DEFAULT NULL,
+  `line` int(11) DEFAULT NULL,
+  `xdebug_message` text,
+  `userid` int(10) unsigned,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1]]></sql>
+		</table>
+		<table>
+			<name>vtiger_item_exchangesync_users</name>
+			<sql><![CDATA[CREATE TABLE `vtiger_item_exchangesync_users` (
+  `userid` int(10) unsigned,
+  `username` varchar(45),
+  `password` varchar(255),
+  `calendar` varchar(255),
+  `daystosync` int(10) NOT NULL DEFAULT '0',
+  `lastsync` datetime,
+  `status` varchar(45),
+  `instantupdate` tinyint(1) NOT NULL DEFAULT '0',
+  `priority` varchar(6) NOT NULL DEFAULT 'VTIGER',
+  `direction` varchar(6) NOT NULL DEFAULT 'ALL',
+  `start_time` varchar(50) NOT NULL DEFAULT '08:00:00',
+  `end_time` varchar(50) NOT NULL DEFAULT '19:00:00',
+  `visibility` varchar(45) NOT NULL DEFAULT 'Private',
+  `eventstatus` varchar(45) NOT NULL DEFAULT 'Planned',
+  `eventpriority` varchar(45) NOT NULL DEFAULT 'Low',
+  `handleprivates` varchar(6) NOT NULL DEFAULT 'NONE',
+  `handlerecurrings` varchar(6) NOT NULL DEFAULT '111111',
+  PRIMARY KEY (`userid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1]]></sql>
+		</table>
+	</tables>
+</schema>

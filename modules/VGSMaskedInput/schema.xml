@@ -1,0 +1,15 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>vtiger_vgsmaskedinput</name>
+			<sql><![CDATA[CREATE TABLE `vtiger_vgsmaskedinput` (
+  `fieldid` int(19) NOT NULL,
+  `tabid` int(19) NOT NULL,
+  `maskinfo` varchar(255) DEFAULT NULL,
+  `enabled` int(1) DEFAULT NULL,
+  PRIMARY KEY (`fieldid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+	</tables>
+</schema>

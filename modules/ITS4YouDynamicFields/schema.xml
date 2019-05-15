@@ -1,0 +1,98 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>its4you_dynamicfields</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `its4you_dynamicfields` (
+  `dfid` int(11) NOT NULL,
+  `description` text NOT NULL,
+  `module` varchar(255) NOT NULL,
+  `conditions` longtext NULL,
+  `deleted` int(2) NOT NULL DEFAULT '0',
+  `follows_up_id` int(11) DEFAULT NULL,
+  `road` varchar(255) DEFAULT NULL,
+  `show_popup` int(2) DEFAULT NULL,
+  `seq` int(11) DEFAULT NULL,
+  `isgroup` int(2) DEFAULT '0',
+  PRIMARY KEY (`dfid`),
+  KEY `module` (`module`),
+  KEY `deleted` (`deleted`),
+  KEY `follows_up_id` (`follows_up_id`),
+  KEY `road` (`road`),
+  KEY `show_popup` (`show_popup`),
+  KEY `seq` (`seq`)
+) ENGINE=InnoDB
+]]></sql>
+		</table>
+		<table>
+			<name>its4you_dynamicfields_blocks</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `its4you_dynamicfields_blocks` (
+  `dfid` int(11) NOT NULL,
+  `block` varchar(255) NOT NULL,
+  `visible` int(2) NOT NULL,
+  KEY `dfid` (`dfid`),
+  KEY `visible` (`visible`)
+) ENGINE=InnoDB
+]]></sql>
+		</table>
+		<table>
+			<name>its4you_dynamicfields_errors</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `its4you_dynamicfields_errors` (
+  `dfid` int(11) NOT NULL,
+  `error_text` text NOT NULL,
+  PRIMARY KEY (`dfid`)
+) ENGINE=InnoDB
+]]></sql>
+		</table>
+		<table>
+			<name>its4you_dynamicfields_fields</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `its4you_dynamicfields_fields` (
+  `dfid` int(11) NOT NULL,
+  `fieldname` varchar(255) NOT NULL,
+  `visible` int(2) NOT NULL,
+  `mandatory` int(2) NOT NULL,
+  KEY `dfid` (`dfid`),
+  KEY `visible` (`visible`),
+  KEY `mandatory` (`mandatory`)
+) ENGINE=InnoDB
+]]></sql>
+		</table>
+		<table>
+			<name>its4you_dynamicfields_fields_groups</name>
+			<sql><![CDATA[
+    CREATE TABLE IF NOT EXISTS `its4you_dynamicfields_fields_groups` (
+      `dfid` int(11) NOT NULL,
+      `fieldsgroup` int(11) NOT NULL,
+      `visible` int(2) DEFAULT NULL,
+      `mandatory` int(2) DEFAULT NULL,
+      KEY `dfid` (`dfid`),
+      KEY `fieldsgroup` (`fieldsgroup`),
+      KEY `visible` (`visible`)
+    ) ENGINE=InnoDB
+    ]]></sql>
+		</table>
+		<table>
+			<name>its4you_dynamicfields_license</name>
+			<sql><![CDATA[
+  CREATE TABLE IF NOT EXISTS `its4you_dynamicfields_license` (
+  `version_type` varchar(255) NOT NULL,
+  `license_key` varchar(255) NOT NULL,
+  `license_info` text,
+  `license_due_date` DATE NULL,
+  UNIQUE KEY `version_type` (`version_type`),
+  KEY `license_key` (`license_key`)
+) ENGINE=InnoDB
+]]></sql>
+		</table>
+		<table>
+			<name>its4you_dynamicfields_version</name>
+			<sql><![CDATA[
+  CREATE TABLE IF NOT EXISTS `its4you_dynamicfields_version` (
+  `version` varchar(50) NOT NULL,
+  `license` varchar(255) NOT NULL,
+  UNIQUE KEY `version` (`version`)
+) ENGINE=InnoDB
+]]></sql>
+		</table>
+	</tables>
+</schema>
