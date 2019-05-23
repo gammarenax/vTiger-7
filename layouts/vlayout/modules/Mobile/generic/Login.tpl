@@ -42,4 +42,4 @@
 
 </body>
 
-{include file="modules/Mobile/generic/Footer.tpl"}
+{* {include file="modules/Mobile/generic/Footer.tpl"} *}
