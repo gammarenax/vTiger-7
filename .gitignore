@@ -44,3 +44,6 @@ silentUpgrade*.php
 import.sh
 .svn
 nohup.out
+
+user_privileges/
+test/templates_c/
