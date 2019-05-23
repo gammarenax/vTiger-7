@@ -231,7 +231,7 @@ class Settings_ITS4YouDynamicFields_Record_Model extends Settings_Vtiger_Record_
         }
     }
 
-    public static function getCleanInstance($moduleName) {
+    public static function getCleanInstance($moduleName = false) {
         $data = array("module_name" => $moduleName,"show_popup" => 1,"description"=>"");
         return self::getInstanceObject($data);
     }

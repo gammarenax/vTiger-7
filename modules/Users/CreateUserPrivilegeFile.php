@@ -21,8 +21,10 @@ require_once('include/utils/GetGroupUsers.php');
   * @returns user_privileges_userid file under the user_privileges directory
  */
 
-function createUserPrivilegesfile($userid)
-{
+function createUserPrivilegesfile($userid) {
+	global $log;
+	$log->debug("In " . __FUNCTION__ . " userid $userid");
+
 	global $root_directory;
 	$handle=@fopen($root_directory.'user_privileges/user_privileges_'.$userid.'.php',"w+");
 

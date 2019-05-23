@@ -1,9 +1,0 @@
-<?php
-
-
-//This is the access privilege file
-$is_admin=true;
-
-$user_info=array('user_name'=>'sfo','is_admin'=>'on','user_password'=>'$2y$10$jRfAqH8.9PzEdIadDw7N3OfO1Oxpb7.RcYGoUelfMDFovnhj0nKVS','confirm_password'=>'$2y$10$jRfAqH8.9PzEdIadDw7N3OfO1Oxpb7.RcYGoUelfMDFovnhj0nKVS','first_name'=>'Serafino','last_name'=>'Fornito','roleid'=>'H7','email1'=>'serafino.fornito@gammarenax.ch','status'=>'Active','activity_view'=>'Today','lead_view'=>'Today','hour_format'=>'12','end_hour'=>'','start_hour'=>'06:00','title'=>'','phone_work'=>'','department'=>'','phone_mobile'=>'','reports_to_id'=>'','phone_other'=>'','email2'=>'','phone_fax'=>'','secondaryemail'=>'','phone_home'=>'','date_format'=>'dd-mm-yyyy','signature'=>'','description'=>'','address_street'=>'','address_city'=>'','address_state'=>'','address_postalcode'=>'','address_country'=>'','accesskey'=>'gZw5Exk23KLgeOx','time_zone'=>'Europe/Amsterdam','currency_id'=>'1','currency_grouping_pattern'=>'123,456,789','currency_decimal_separator'=>'.','currency_grouping_separator'=>',','currency_symbol_placement'=>'$1.0','imagename'=>'serafino.fornito_re.gif','internal_mailer'=>'0','theme'=>'softed','language'=>'de_de','reminder_interval'=>'','phone_crm_extension'=>'','no_of_currency_decimals'=>'2','truncate_trailing_zeros'=>'0','dayoftheweek'=>'Monday','callduration'=>'5','othereventduration'=>'5','calendarsharedtype'=>'public','default_record_view'=>'Summary','leftpanelhide'=>'0','rowheight'=>'medium','defaulteventstatus'=>'Option Ausw&auml;hlen','defaultactivitytype'=>'Option Ausw&auml;hlen','hidecompletedevents'=>'0','is_owner'=>'0','defaultcalendarview'=>'MyCalendar','currency_name'=>'Switzerland Francs','currency_code'=>'CHF','currency_symbol'=>'CHF','conv_rate'=>'1.00000','record_id'=>'','record_module'=>'','id'=>'28');
-
-?>
